@@ -1,0 +1,11 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.x
+    commands:
+      - pip install apache-airflow
+  build:
+    commands:
+      - python -m airflow dags list  # Validate DAGs
+      - python -m pytest tests/      # Run tests if available

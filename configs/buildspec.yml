@@ -9,3 +9,7 @@ phases:
     commands:
       - python -m airflow dags list  # Validate DAGs
       - python -m pytest tests/      # Run tests if available
+  artifacts:
+    files:
+      - dags/*   # Include only the DAG files
+    discard-paths: yes

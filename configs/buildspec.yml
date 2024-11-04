@@ -2,8 +2,12 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      python: 3.x  # Specify your desired Python version
     commands:
-      - pip install -r requirements.txt  # Install dependencies
+      - apt-get update
+      - apt-get install -y cmake
+      - pip install -r requirements.txt
 
   build:
     commands:

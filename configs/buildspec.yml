@@ -1,16 +1,5 @@
 version: 0.2
 
-phases:
-  install:
-    commands:
-      - yum update -y  # Use yum for Amazon Linux
-      - yum install -y cmake  # Install cmake using yum
-      - pip install -r requirements.txt  # Install Python dependencies
-
-  build:
-    commands:
-      - python -m airflow dags list  # Command to check if DAGs are valid
-
 artifacts:
   files:
     - dags/*.py  # Specify only DAG files

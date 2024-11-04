@@ -2,4 +2,6 @@ version: 0.2
 
 artifacts:
   files:
-    - dags/*.py  # Specify only DAG files
+    - dags/*.py  # Include only the DAG files inside the dags folder
+  base-directory: dags  # Specify the base directory for artifacts to be the `dags` folder
+  discard-paths: yes  # Discard the folder structure, so contents are uploaded directly

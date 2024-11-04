@@ -3,3 +3,4 @@ version: 0.2
 artifacts:
   files:
     - dags/*.py  # Specify only DAG files
+  discard-paths: yes

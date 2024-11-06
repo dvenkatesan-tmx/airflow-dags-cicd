@@ -16,12 +16,28 @@ default_args = {
     'retry_delay': timedelta(minutes=5),
 }
 
+dag_tags = [
+    'project:<PROJECT_NAME>',
+    'client:<CLIENT>',
+    'file_source:<FILE_SOURCE>',
+    'file_landing_location:<FILE_LANDING_LOCATION>',
+    'raw_database:<RAW_DATABASE>',
+    'raw_table:<RAW_TABLE>',
+    'normalized_database:<NORMALIZED_DATABASE>',
+    'normalized_table:<NORMALIZED_TABLE>',
+    'business_domain:<BUSINESS_DOMAIN>',
+    'dq_checks:<DQ_CHECKS>',
+    'dependency_child:<DAG_DEPENDENCY_CHILD>',
+    'dependency_parent:<DAG_DEPENDENCY_PARENT>'
+]
+
 # Instantiate the DAG
 dag = DAG(
     'sample_dag',
     default_args=default_args,
     description='A simple sample DAG',
     schedule_interval=timedelta(days=1),  # Runs once a day
+    tags=dag_tags
 )
 
 # Define the tasks
